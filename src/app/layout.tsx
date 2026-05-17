@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     "personal growth",
   ],
   authors: [{ name: "Alex Hurley" }],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "One New Thing — A quiet daily challenge journal",
     description:

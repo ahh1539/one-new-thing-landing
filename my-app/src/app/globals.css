@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-paper: #F8F5F0;
+  --color-paper-alt: #EFECE7;
+  --color-ink: #1A1A1F;
+  --color-secondary: #6B6B70;
+  --color-border: rgba(26, 26, 31, 0.10);
+  --color-border-soft: rgba(26, 26, 31, 0.06);
+  
+  --color-easy: #A8B89B;
+  --color-easy-text: #6B7A5E;
+  --color-med: #D4A574;
+  --color-med-text: #8B6B3F;
+  --color-hard: #C97D5D;
+  --color-hard-text: #8A4A2E;
+  --color-accent: #5B8A8A;
+  
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  
+  --color-background: #F8F5F0;
+  --color-foreground: #1A1A1F;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .rule {
+    height: 1px;
+    background-color: var(--color-border);
+  }
+  
+  .rule-ink {
+    height: 1px;
+    background-color: var(--color-ink);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: #1A1A1F;
+    --color-paper-alt: #252530;
+    --color-ink: #F8F5F0;
+    --color-secondary: #A0A0A8;
+    --color-border: rgba(255, 255, 255, 0.07);
+    --color-border-soft: rgba(255, 255, 255, 0.05);
+    
+    --color-background: #1A1A1F;
+    --color-foreground: #F8F5F0;
+  }
+}

@@ -41,6 +41,14 @@ export const metadata: Metadata = {
       "Three small challenges each morning. One easy, one medium, one hard. Pick one. Do it.",
     type: "website",
     locale: "en_US",
+    siteName: "One New Thing",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "One New Thing — A quiet daily challenge journal",
+    description:
+      "Three small challenges each morning. One easy, one medium, one hard. Pick one. Do it.",
+    creator: "@onenewthing",
   },
 };
 

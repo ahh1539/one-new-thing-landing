@@ -1,27 +1,27 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-paper: #F8F5F0;
-  --color-paper-alt: #EFECE7;
-  --color-ink: #1A1A1F;
-  --color-secondary: #6B6B70;
-  --color-border: rgba(26, 26, 31, 0.10);
-  --color-border-soft: rgba(26, 26, 31, 0.06);
+@theme {
+  --color-paper: var(--paper);
+  --color-paper-alt: var(--paper-alt);
+  --color-ink: var(--ink);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
   
-  --color-easy: #A8B89B;
-  --color-easy-text: #6B7A5E;
-  --color-med: #D4A574;
-  --color-med-text: #8B6B3F;
-  --color-hard: #C97D5D;
-  --color-hard-text: #8A4A2E;
-  --color-accent: #5B8A8A;
+  --color-easy: var(--easy);
+  --color-easy-text: var(--easy-text);
+  --color-med: var(--med);
+  --color-med-text: var(--med-text);
+  --color-hard: var(--hard);
+  --color-hard-text: var(--hard-text);
+  --color-accent: var(--accent);
   
   --font-serif: var(--font-fraunces), Georgia, serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   
-  --color-background: #F8F5F0;
-  --color-foreground: #1A1A1F;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
 
 @layer base {
@@ -50,16 +50,36 @@
   }
 }
 
+:root {
+  --paper: #F8F5F0;
+  --paper-alt: #EFECE7;
+  --ink: #1A1A1F;
+  --secondary: #6B6B70;
+  --border: rgba(26, 26, 31, 0.10);
+  --border-soft: rgba(26, 26, 31, 0.06);
+  
+  --easy: #A8B89B;
+  --easy-text: #6B7A5E;
+  --med: #D4A574;
+  --med-text: #8B6B3F;
+  --hard: #C97D5D;
+  --hard-text: #8A4A2E;
+  --accent: #5B8A8A;
+  
+  --background: #F8F5F0;
+  --foreground: #1A1A1F;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-paper: #1A1A1F;
-    --color-paper-alt: #252530;
-    --color-ink: #F8F5F0;
-    --color-secondary: #A0A0A8;
-    --color-border: rgba(255, 255, 255, 0.07);
-    --color-border-soft: rgba(255, 255, 255, 0.05);
+    --paper: #1A1A1F;
+    --paper-alt: #252530;
+    --ink: #F8F5F0;
+    --secondary: #A0A0A8;
+    --border: rgba(255, 255, 255, 0.07);
+    --border-soft: rgba(255, 255, 255, 0.05);
     
-    --color-background: #1A1A1F;
-    --color-foreground: #F8F5F0;
+    --background: #1A1A1F;
+    --foreground: #F8F5F0;
   }
 }

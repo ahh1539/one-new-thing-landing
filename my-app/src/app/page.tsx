@@ -2,7 +2,6 @@ import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Tiers } from "@/components/Tiers";
 import { Features } from "@/components/Features";
-import { Pro } from "@/components/Pro";
 import { FAQ } from "@/components/FAQ";
 import { PrivacyPolicy } from "@/components/PrivacyPolicy";
 import { Footer } from "@/components/Footer";
@@ -23,10 +22,6 @@ export default function Home() {
         <div className="rule" />
       </div>
       <Features />
-      <div className="mx-auto w-full max-w-4xl px-6 sm:px-8 md:px-12 lg:px-16">
-        <div className="rule" />
-      </div>
-      <Pro />
       <div className="mx-auto w-full max-w-4xl px-6 sm:px-8 md:px-12 lg:px-16">
         <div className="rule" />
       </div>

@@ -43,10 +43,18 @@
     height: 1px;
     background-color: var(--color-border);
   }
-  
+
   .rule-ink {
     height: 1px;
     background-color: var(--color-ink);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 

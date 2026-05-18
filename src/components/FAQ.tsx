@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: "What kinds of challenges will I get?",
-    a: "Challenges span nine categories: Around Town, Food & Drink, People, Move, Make, Learn, Culture, Home, and Offline. They're concrete, observable actions — not inner-work prompts or therapy exercises. Think 'Walk a different way home,' not 'Practice gratitude.'",
+    a: "Challenges span ten categories: Around Town, Food & Drink, People, Move, Make, Learn, Culture, Home, Self-Care, and Offline. They're concrete, observable actions — not inner-work prompts or therapy exercises. Think 'Walk a different way home,' not 'Practice gratitude.'",
   },
   {
     q: "Do I need an account?",

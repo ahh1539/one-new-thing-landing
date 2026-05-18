@@ -76,7 +76,7 @@ export function Hero() {
                 Challenge types
               </div>
               <div className="mt-1 font-serif text-[17px] text-ink" style={{ fontFamily: "var(--font-serif)" }}>
-                3 tiers · 9 categories
+                3 tiers · 10 categories
               </div>
             </div>
             <div>

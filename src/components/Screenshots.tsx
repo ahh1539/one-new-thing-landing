@@ -1,13 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { useInView } from "./useInView";
 
 interface ScreenshotItem {
   name: string;
   label: string;
-  webp: string;
-  png: string;
+  src: string;
   title: string;
   description: string;
   align: "left" | "right";
@@ -17,8 +17,7 @@ const screenshots: ScreenshotItem[] = [
   {
     name: "today-light",
     label: "01",
-    webp: "/screenshots/01-today-light.webp",
-    png: "/screenshots/01-today-light.png",
+    src: "/screenshots/01-today-light.png",
     title: "Your daily trio",
     description:
       "Each morning, three fresh challenges await. One easy, one medium, one hard. Pick the one that fits your day.",
@@ -27,8 +26,7 @@ const screenshots: ScreenshotItem[] = [
   {
     name: "history",
     label: "02",
-    webp: "/screenshots/03-history.webp",
-    png: "/screenshots/03-history.png",
+    src: "/screenshots/03-history.png",
     title: "Watch the habit build",
     description:
       "A living record of everything you've tried. The contribution grid fills in one square at a time.",
@@ -37,8 +35,7 @@ const screenshots: ScreenshotItem[] = [
   {
     name: "stats",
     label: "03",
-    webp: "/screenshots/04-stats.webp",
-    png: "/screenshots/04-stats.png",
+    src: "/screenshots/04-stats.png",
     title: "Quiet numbers",
     description:
       "Current streak. Best streak. Weekly completions. Monthly bars. The story of your year, told in small numbers.",
@@ -47,8 +44,7 @@ const screenshots: ScreenshotItem[] = [
   {
     name: "completion-photo",
     label: "04",
-    webp: "/screenshots/06-completion-photo.webp",
-    png: "/screenshots/06-completion-photo.png",
+    src: "/screenshots/06-completion-photo.png",
     title: "Keep the story",
     description:
       "Add a note or snap a photo after marking complete. These are your anchors — small moments that help you remember.",
@@ -59,9 +55,11 @@ const screenshots: ScreenshotItem[] = [
 function Phone({
   screenshot,
   onClick,
+  priority,
 }: {
   screenshot: ScreenshotItem;
   onClick: () => void;
+  priority: boolean;
 }) {
   return (
     <button
@@ -70,17 +68,18 @@ function Phone({
       aria-label={`Open ${screenshot.title} screenshot`}
     >
       <div className="relative overflow-hidden rounded-[32px] bg-paper shadow-[0_4px_24px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_16px_48px_rgba(0,0,0,0.14)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] dark:group-hover:shadow-[0_16px_48px_rgba(0,0,0,0.5)]">
-        <picture>
-          <source srcSet={screenshot.webp} type="image/webp" />
-          <img
-            src={screenshot.png}
-            alt={screenshot.title}
-            className="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-            style={{ aspectRatio: "720 / 1565" }}
+        <div className="relative w-full" style={{ aspectRatio: "720 / 1565" }}>
+          <Image
+            src={screenshot.src}
+            alt={`${screenshot.title} screen in the One New Thing daily challenge app`}
+            fill
+            sizes="(max-width: 1024px) 260px, 280px"
+            className="object-cover"
+            priority={priority}
+            loading={priority ? "eager" : "lazy"}
+            decoding={priority ? "sync" : "async"}
           />
-        </picture>
+        </div>
       </div>
     </button>
   );
@@ -118,11 +117,12 @@ function Lightbox({
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
+      aria-label={`${screenshot.title} screenshot`}
     >
       <button
         onClick={onClose}
         className="absolute top-6 right-6 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-paper/90 text-ink shadow-lg transition-transform hover:scale-105 dark:bg-ink/90 dark:text-paper"
-        aria-label="Close"
+        aria-label="Close screenshot lightbox"
       >
         <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
           <path
@@ -136,19 +136,19 @@ function Lightbox({
 
       <div className="mx-6 max-h-[85vh] w-full max-w-[340px] animate-in fade-in zoom-in-95 duration-300">
         <div
-          className="overflow-hidden rounded-[32px] shadow-2xl"
+          className="relative w-full overflow-hidden rounded-[32px] shadow-2xl"
           style={{ aspectRatio: "720 / 1565" }}
         >
-          <picture>
-            <source srcSet={screenshot.webp} type="image/webp" />
-            <img
-              src={screenshot.png}
-              alt={screenshot.title}
-              className="h-full w-full object-cover"
-              loading="eager"
-              decoding="async"
-            />
-          </picture>
+          <Image
+            src={screenshot.src}
+            alt={`${screenshot.title} screen in the One New Thing daily challenge app`}
+            fill
+            sizes="340px"
+            className="object-cover"
+            priority
+            loading="eager"
+            decoding="sync"
+          />
         </div>
       </div>
     </div>
@@ -162,12 +162,17 @@ export function Screenshots() {
 
   return (
     <>
-      <section ref={ref} className="px-6 py-28 sm:px-8 md:px-12 lg:px-16 lg:py-36">
+      <section
+        ref={ref}
+        className="px-6 py-28 sm:px-8 md:px-12 lg:px-16 lg:py-36"
+        aria-labelledby="screenshots-heading"
+      >
         <div className="mx-auto max-w-4xl">
           {/* Header */}
           <div className="mb-24 text-center lg:mb-32">
             <span className="font-mono text-[11px] text-secondary">§ 03a</span>
             <h2
+              id="screenshots-heading"
               className="mt-3 font-serif text-[42px] font-medium leading-[1.05] tracking-[-1.5px] text-ink sm:text-[52px] lg:text-[56px]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
@@ -222,6 +227,7 @@ export function Screenshots() {
                     <Phone
                       screenshot={s}
                       onClick={() => setActiveIndex(i)}
+                      priority={i === 0}
                     />
                   </div>
                 </div>

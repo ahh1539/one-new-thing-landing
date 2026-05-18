@@ -17,28 +17,48 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-x-8 gap-y-2 text-[13px]">
-            <a href="#" className="text-secondary transition-colors hover:text-ink">
-              App Store
-            </a>
-            <a href="#how-it-works" className="text-secondary transition-colors hover:text-ink">
-              How it works
-            </a>
-            <a href="#privacy" className="text-secondary transition-colors hover:text-ink">
-              Privacy
-            </a>
-            <a
-              href="mailto:hello@onenewthing.app"
-              className="text-secondary transition-colors hover:text-ink"
-            >
-              Contact
-            </a>
-          </div>
+          <nav aria-label="Footer">
+            <ul className="flex flex-wrap gap-x-8 gap-y-2 text-[13px]">
+              <li>
+                <a
+                  href="#"
+                  className="text-secondary transition-colors hover:text-ink"
+                  rel="nofollow sponsored"
+                >
+                  App Store
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  className="text-secondary transition-colors hover:text-ink"
+                >
+                  How it works
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#privacy"
+                  className="text-secondary transition-colors hover:text-ink"
+                >
+                  Privacy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@onenewthing.app"
+                  className="text-secondary transition-colors hover:text-ink"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
         <div className="mt-12 border-t border-border pt-6">
           <p className="text-center text-[12px] text-secondary">
-            © {new Date().getFullYear()} Alex Hurley. All rights reserved.
+            &copy; {new Date().getFullYear()} Alex Hurley. All rights reserved.
           </p>
         </div>
       </div>

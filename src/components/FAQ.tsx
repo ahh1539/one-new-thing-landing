@@ -5,12 +5,20 @@ import { useInView } from "./useInView";
 
 const faqs = [
   {
+    q: "What is One New Thing?",
+    a: "One New Thing is a daily challenge app for iPhone designed to help you break routine and discover something new every day. Each morning, the app delivers three curated challenges — one easy, one medium, one hard. You only need to complete one. It functions as a gentle micro-habit journal rather than a rigid habit tracker.",
+  },
+  {
     q: "Is this another habit tracker?",
     a: "No. One New Thing is not a habit tracker. There are no streaks to break, no chains to maintain, and no guilt when you miss a day. You get three fresh challenges every morning. Complete one, or none. The app doesn't judge.",
   },
   {
     q: "What kinds of challenges will I get?",
     a: "Challenges span ten categories: Around Town, Food & Drink, People, Move, Make, Learn, Culture, Home, Self-Care, and Offline. They're concrete, observable actions — not inner-work prompts or therapy exercises. Think 'Walk a different way home,' not 'Practice gratitude.'",
+  },
+  {
+    q: "How does One New Thing help with routine fatigue?",
+    a: "Routine fatigue happens when weeks start to feel indistinguishable. By introducing one small, unexpected activity each day, One New Thing creates what psychologists call 'pattern interrupts' — deliberate breaks in repetition that restore attention, deepen memory formation, and increase subjective well-being. Over time, these micro-moments of novelty compound into a richer, more textured life.",
   },
   {
     q: "Do I need an account?",
@@ -24,6 +32,14 @@ const faqs = [
     q: "Can I share my completions?",
     a: "Yes. After completing a challenge, you can generate a share card — a clean, designed image with your challenge and note — and save it to your camera roll. Sharing is always opt-in and one-way.",
   },
+  {
+    q: "Is the app free?",
+    a: "One New Thing is free to download and use. The core experience — three daily challenges, history, stats, and notes — is completely free. Pro subscribers unlock cloud sync across devices, additional challenge categories, and priority access to new features.",
+  },
+  {
+    q: "Does One New Thing work offline?",
+    a: "Yes. All core features work offline. Your challenges, completions, notes, and photos are stored locally on your device. Cloud sync only happens when you choose to enable it and you have an active internet connection.",
+  },
 ];
 
 export function FAQ() {
@@ -32,11 +48,17 @@ export function FAQ() {
   const isInView = useInView(ref);
 
   return (
-    <section ref={ref} className="px-6 py-24 sm:px-8 md:px-12 lg:px-16 lg:py-32">
+    <section
+      id="faq"
+      ref={ref}
+      className="px-6 py-24 sm:px-8 md:px-12 lg:px-16 lg:py-32"
+      aria-labelledby="faq-heading"
+    >
       <div className="mx-auto max-w-4xl">
         <div className="mb-16">
           <span className="font-mono text-[11px] text-secondary">§ 05</span>
           <h2
+            id="faq-heading"
             className="mt-2 font-serif text-[40px] font-medium leading-[1.05] tracking-[-1.5px] text-ink sm:text-[44px]"
             style={{ fontFamily: "var(--font-serif)" }}
           >
@@ -53,11 +75,13 @@ export function FAQ() {
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
               }`}
-              style={{ transitionDelay: `${i * 80}ms` }}
+              style={{ transitionDelay: `${i * 60}ms` }}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 className="flex w-full items-start justify-between py-6 text-left"
+                aria-expanded={open === i}
+                aria-controls={`faq-answer-${i}`}
               >
                 <span
                   className="pr-4 font-serif text-[20px] font-medium leading-[1.2] tracking-[-0.3px] text-ink sm:text-[22px]"
@@ -69,6 +93,7 @@ export function FAQ() {
                   className={`mt-1 shrink-0 text-secondary transition-transform duration-300 ${
                     open === i ? "rotate-45" : ""
                   }`}
+                  aria-hidden="true"
                 >
                   <svg
                     width="16"
@@ -86,6 +111,7 @@ export function FAQ() {
                 </span>
               </button>
               <div
+                id={`faq-answer-${i}`}
                 className={`overflow-hidden transition-all duration-300 ease-out ${
                   open === i ? "max-h-96 pb-6" : "max-h-0"
                 }`}

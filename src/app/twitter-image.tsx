@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "One New Thing — A quiet daily challenge journal";
+export const alt = "One New Thing — Daily challenge app for iOS";
 export const size = {
   width: 1200,
   height: 630,

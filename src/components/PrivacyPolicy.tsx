@@ -26,7 +26,7 @@ export function PrivacyPolicy() {
             className="mt-4 max-w-[540px] border-b border-border pb-7 font-serif text-lg italic leading-[1.5] text-secondary"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            Last updated: May 17, 2026
+            Last updated: May 18, 2026
           </p>
         </div>
 
@@ -39,27 +39,36 @@ export function PrivacyPolicy() {
             <p>We collect only what is necessary to provide the service:</p>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-[1.65] text-secondary">
               <li>
-                <strong className="text-ink">Account information:</strong> Email address
-                and display name, used for authentication and cloud sync.
+                <strong className="text-ink">Account information:</strong>{" "}
+                Email address, display name, and account tokens used for
+                authentication, Pro entitlements, sync, restore, export, and
+                deletion.
               </li>
               <li>
-                <strong className="text-ink">Challenge data:</strong> Which
-                challenges you complete, when you complete them, and which tier
-                they belong to.
+                <strong className="text-ink">Profile and tuning choices:</strong>{" "}
+                Category preferences, boundaries, context, difficulty
+                preference, and the optional tailoring note you choose to save.
+              </li>
+              <li>
+                <strong className="text-ink">Daily challenge data:</strong>{" "}
+                Challenge offers, swaps, completions, completion dates, tiers,
+                and categories.
               </li>
               <li>
                 <strong className="text-ink">Optional content:</strong> Short
-                text notes and photos you choose to attach to completions.
+                journal notes and app-sized photo copies you choose to attach
+                to completions.
               </li>
               <li>
-                <strong className="text-ink">Preferences:</strong> App
-                settings such as dark mode, notification preferences, and
-                challenge category filters.
+                <strong className="text-ink">App settings and sparse events:</strong>{" "}
+                Appearance, reminder settings, Pro status, and privacy-safe
+                product events when analytics are enabled.
               </li>
             </ul>
             <p className="mt-4 text-[15px] leading-[1.65] text-secondary">
               We do not collect precise location data, device identifiers for
-              advertising, or any health or fitness data.
+              advertising, contacts, health data, fitness data, or payment card
+              details.
             </p>
           </PolicySection>
 
@@ -68,10 +77,12 @@ export function PrivacyPolicy() {
               One New Thing may request access to your camera and photo library
               so you can attach photos to challenge completions. This is
               entirely optional. Photos are stored locally on your device by
-              default. If you subscribe to Pro and enable cloud sync, photos are
-              backed up to our secure cloud storage. We do not access your photo
-              library for any purpose other than saving the specific photos you
-              choose to attach.
+              default as app-sized JPEG copies. Original photo files and
+              original photo metadata are not stored in the journal record. If
+              you subscribe to Pro and cloud photo backup is available, the app
+              backs up those copied journal photos to private iCloud/CloudKit
+              records. We do not browse, scan, or upload the rest of your photo
+              library.
             </p>
           </PolicySection>
 
@@ -79,12 +90,14 @@ export function PrivacyPolicy() {
             <ul className="list-disc space-y-2 pl-5 text-[15px] leading-[1.65] text-secondary">
               <li>To provide the core service: daily challenges, history, and stats</li>
               <li>To sync your data across devices (Pro subscribers)</li>
+              <li>To restore your journal when you sign in again</li>
               <li>To send optional daily and evening reminders (if enabled)</li>
-              <li>To improve challenge quality and relevance over time</li>
+              <li>To improve challenge quality and personalize recommendations</li>
+              <li>To understand coarse product usage when analytics are enabled</li>
             </ul>
             <p className="mt-4 text-[15px] leading-[1.65] text-secondary">
-              We do not use your data for advertising, profiling, or any
-              automated decision-making that affects your rights.
+              We do not use your journal notes, photos, account data, or events
+              for advertising or ad targeting.
             </p>
           </PolicySection>
 
@@ -95,37 +108,62 @@ export function PrivacyPolicy() {
             <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-[1.65] text-secondary">
               <li>
                 <strong className="text-ink">Cloud infrastructure:</strong>{" "}
-                Our backend runs on encrypted cloud servers. Data is encrypted
-                in transit (TLS) and at rest.
+                Our backend runs on encrypted cloud infrastructure. Data is
+                encrypted in transit (TLS) and at rest.
+              </li>
+              <li>
+                <strong className="text-ink">Apple services:</strong> Sign in
+                with Apple, private iCloud/CloudKit records, App Store
+                subscriptions, and StoreKit transaction verification.
+              </li>
+              <li>
+                <strong className="text-ink">Email delivery:</strong> If you
+                choose email sign-in, we use an email provider to send your
+                login code.
+              </li>
+              <li>
+                <strong className="text-ink">Optional AI tailoring:</strong>{" "}
+                When enabled, Mistral AI may process your optional tailoring
+                note solely to derive recommendation signals. Journal notes,
+                completion photos, and location are not sent for this purpose.
               </li>
               <li>
                 <strong className="text-ink">Payment processing:</strong>{" "}
-                Pro subscriptions are processed through Apple's App Store and
+                Pro subscriptions are processed through the Apple App Store and
                 StoreKit. We do not collect or store your payment information.
               </li>
             </ul>
             <p className="mt-4 text-[15px] leading-[1.65] text-secondary">
-              We do not use analytics SDKs, advertising networks, or social
-              media tracking pixels.
+              We do not use advertising networks, social media tracking pixels,
+              or third-party analytics SDKs.
             </p>
           </PolicySection>
 
           <PolicySection title="5. Data retention and deletion">
             <ul className="list-disc space-y-2 pl-5 text-[15px] leading-[1.65] text-secondary">
               <li>
-                Local data remains on your device until you delete the app.
+                Local journal data remains on your device until you delete the
+                app, sign out, remove it in the app, or delete your account.
               </li>
               <li>
-                Cloud data is retained while your account is active. If you
-                delete your account, all associated cloud data is permanently
-                removed within 30 days.
+                Backend account metadata is retained while your account is
+                active. Sparse product events expire after 180 days.
               </li>
               <li>
-                You can export your data at any time from the app settings.
+                Pro iCloud sync and photo backup records are retained while
+                sync is active, and may remain available for restore during the
+                lapsed-Pro retention window shown in the app.
               </li>
               <li>
-                You can request complete deletion by contacting us (see Section
-                8).
+                You can export your local journal data and backend account
+                metadata from app settings. Current exports include JSON/CSV
+                records and photo metadata, but not photo files.
+              </li>
+              <li>
+                You can delete your account from app settings. Deletion removes
+                backend account metadata, revokes refresh access, clears local
+                account data, and cleans up private iCloud records when
+                available.
               </li>
             </ul>
           </PolicySection>
@@ -133,10 +171,10 @@ export function PrivacyPolicy() {
           <PolicySection title="6. Security">
             <p className="text-[15px] leading-[1.65] text-secondary">
               We take reasonable measures to protect your data, including
-              encryption in transit and at rest, secure authentication, and
-              regular security reviews. However, no method of electronic
-              storage is 100% secure. We encourage you to use a strong,
-              unique password for your account.
+              encryption in transit and at rest, passwordless authentication
+              with Sign in with Apple or email login codes, and regular
+              security reviews. However, no method of electronic storage is
+              100% secure.
             </p>
           </PolicySection>
 

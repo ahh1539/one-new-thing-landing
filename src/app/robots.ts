@@ -18,7 +18,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://onenewthing.app/sitemap.xml",
-    host: "https://onenewthing.app",
+    sitemap: "https://www.one-new-thing.com/sitemap.xml",
+    host: "https://www.one-new-thing.com",
   };
 }

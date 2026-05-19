@@ -21,9 +21,10 @@ export function Footer() {
             <ul className="flex flex-wrap gap-x-8 gap-y-2 text-[13px]">
               <li>
                 <a
-                  href="#"
+                  href="https://apps.apple.com/us/app/one-new-thing/id6770367175"
                   className="text-secondary transition-colors hover:text-ink"
                   rel="nofollow sponsored"
+                  target="_blank"
                 >
                   App Store
                 </a>

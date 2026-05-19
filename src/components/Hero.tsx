@@ -49,8 +49,9 @@ export function Hero() {
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <a
-              href="#"
+              href="https://apps.apple.com/us/app/one-new-thing/id6770367175"
               rel="nofollow sponsored"
+              target="_blank"
               className="inline-flex h-12 items-center justify-center rounded-2xl bg-ink px-8 text-base font-semibold text-paper transition-all duration-200 hover:scale-[0.97] hover:opacity-90"
             >
               Get the app

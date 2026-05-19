@@ -40,11 +40,20 @@ export function Philosophy() {
             <p className="mt-4 text-[15px] leading-[1.65] text-secondary">
               Research in behavioral psychology shows that small, daily actions
               compound into lasting change far more reliably than ambitious
-              resolutions. A micro-habit — something that takes under five
-              minutes and requires almost no willpower — bypasses the brain's
-              resistance to change. One New Thing applies this principle by
-              offering a single, curated daily challenge that nudges you outside
-              your routine without overwhelming your schedule.
+              resolutions.
+              <a
+                href="https://www.bjfogg.com/tiny-habits"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-0.5 align-super text-[10px] text-secondary hover:text-ink"
+              >
+                [1]
+              </a>{" "}
+              A micro-habit, something that takes under five minutes and
+              requires almost no willpower, bypasses the brain's resistance to
+              change. One New Thing applies this principle by offering a single,
+              curated daily challenge that nudges you outside your routine
+              without overwhelming your schedule.
             </p>
           </div>
 
@@ -56,14 +65,34 @@ export function Philosophy() {
               Breaking the autopilot
             </h3>
             <p className="mt-4 text-[15px] leading-[1.65] text-secondary">
-              When every weekday starts to feel the same, life narrows. The
-              antidote is not a productivity system or a rigid morning routine —
-              it is intentional novelty. Daily challenges create small ruptures
-              in repetition: a different walking route, a conversation with a
-              stranger, a dish you have never tried. These moments restore
-              attention, deepen memory, and remind you that your city, your
-              relationships, and your own capabilities are larger than you
-              thought.
+              When every weekday starts to feel the same, life narrows. Studies
+              suggest roughly two-thirds of daily behaviors run on autopilot,
+              triggered automatically by habit rather than conscious choice.
+              <a
+                href="https://www.sciencedaily.com/releases/2026/03/260306112724.htm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-0.5 align-super text-[10px] text-secondary hover:text-ink"
+              >
+                [2]
+              </a>{" "}
+              The antidote is not a productivity system or a rigid morning
+              routine. It is intentional novelty. Neuroscience research shows
+              that novel experiences boost dopamine, sharpen attention, and slow
+              the subjective passage of time.
+              <a
+                href="https://www.creativegroupinc.com/2025/11/05/the-psychology-and-power-of-novelty-ignites-engagement/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-0.5 align-super text-[10px] text-secondary hover:text-ink"
+              >
+                [3]
+              </a>{" "}
+              Daily challenges create small ruptures in repetition: a different
+              walking route, a conversation with a stranger, a dish you have
+              never tried. These moments restore attention, deepen memory, and
+              remind you that your city, your relationships, and your own
+              capabilities are larger than you thought.
             </p>
           </div>
 
@@ -77,8 +106,20 @@ export function Philosophy() {
             <p className="mt-4 text-[15px] leading-[1.65] text-secondary">
               Traditional habit trackers punish absence. Miss a day and your
               chain breaks; the number resets to zero and the motivation
-              evaporates. One New Thing takes a different approach. There is no
-              streak counter pressuring you to maintain perfection. Complete a
+              evaporates. Behavioral economists have found that while streaks
+              can motivate through loss aversion, broken streaks often trigger
+              guilt and the "what the hell" effect, undermining the very habits
+              they aim to build.
+              <a
+                href="https://www.psychologicalscience.org/news/to-build-a-habit-try-a-streak.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-0.5 align-super text-[10px] text-secondary hover:text-ink"
+              >
+                [4]
+              </a>{" "}
+              One New Thing takes a different approach. There is no streak
+              counter pressuring you to maintain perfection. Complete a
               challenge when you can, skip when you must. The app records your
               history gently, like a journal rather than a scoreboard, because
               sustainable personal growth is built on compassion, not coercion.
@@ -99,9 +140,35 @@ export function Philosophy() {
               explore hidden corners of your neighborhood, reconnect with
               friends, learn a new skill, or simply rest without your phone, the
               categories adapt to your mood and context. The variety ensures
-              that monotony never sets in — there is always a new angle waiting.
+              that monotony never sets in. There is always a new angle waiting.
             </p>
           </div>
+        </div>
+
+        <div className="mt-16 border-t border-border pt-6">
+          <p className="font-mono text-[10px] uppercase tracking-[1px] text-secondary">
+            Sources
+          </p>
+          <ol className="mt-3 space-y-1.5 text-[11px] leading-[1.5] text-secondary">
+            <li>
+              [1] Fogg, B.J.{" "}
+              <em>Tiny Habits: The Small Changes That Change Everything</em>.
+              Houghton Mifflin Harcourt, 2020.
+            </li>
+            <li>
+              [2] "Scientists say most of what you do each day happens on
+              autopilot."{" "}
+              <em>ScienceDaily</em>, March 2026.
+            </li>
+            <li>
+              [3] "The Psychology and Power of Novelty Ignites Engagement."{" "}
+              <em>Creative Group</em>, Nov 2025.
+            </li>
+            <li>
+              [4] Milkman, K. "To Build a Habit, Try a Streak."{" "}
+              <em>Association for Psychological Science</em>, Jan 2025.
+            </li>
+          </ol>
         </div>
       </div>
     </section>

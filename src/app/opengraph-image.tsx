@@ -1,7 +1,8 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
-export const runtime = "edge";
-export const alt = "One New Thing — Daily challenge app for iOS";
+export const alt = "One New Thing — Daily Challenge App for iOS";
 export const size = {
   width: 1200,
   height: 630,
@@ -9,142 +10,154 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
-  const fraunces = await fetch(
-    new URL(
-      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&display=swap"
-    )
-  ).then((res) => res.text());
-
-  // Extract the font URL from the CSS
-  const fontUrlMatch = fraunces.match(/url\(([^)]+)\)/);
-  const fontUrl = fontUrlMatch ? fontUrlMatch[1].replace(/"/g, "") : null;
-
-  const fontData = fontUrl
-    ? await fetch(fontUrl).then((res) => res.arrayBuffer())
-    : null;
+  const frauncesBold = await readFile(
+    join(process.cwd(), "public/fonts/fraunces-700.ttf")
+  );
+  const interRegular = await readFile(
+    join(process.cwd(), "public/fonts/inter-400.ttf")
+  );
+  const interMedium = await readFile(
+    join(process.cwd(), "public/fonts/inter-500.ttf")
+  );
 
   return new ImageResponse(
     (
       <div
         style={{
-          background: "#F8F5F0",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          padding: "80px",
+          backgroundColor: "#F8F5F0",
+          padding: 80,
+          fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
           position: "relative",
         }}
       >
-        {/* Subtle border */}
+        {/* Top label */}
         <div
           style={{
-            position: "absolute",
-            top: "40px",
-            left: "40px",
-            right: "40px",
-            bottom: "40px",
-            border: "1px solid rgba(26, 26, 31, 0.10)",
-            borderRadius: "18px",
+            display: "flex",
+            fontSize: 14,
+            fontWeight: 500,
+            textTransform: "uppercase",
+            letterSpacing: 3,
+            color: "#6B6B70",
+            fontFamily: "Inter, sans-serif",
           }}
-        />
+        >
+          No. 001 — Daily Challenges
+        </div>
 
-        {/* Content */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-          {/* Label */}
+        {/* Spacer */}
+        <div style={{ flex: 1 }} />
+
+        {/* Main content */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
           <div
             style={{
-              fontSize: "14px",
-              fontWeight: 600,
-              letterSpacing: "3px",
-              textTransform: "uppercase",
-              color: "#6B6B70",
-              fontFamily: "system-ui",
+              display: "flex",
+              flexDirection: "column",
+              gap: 16,
             }}
           >
-            Daily Challenges
+            <div
+              style={{
+                fontSize: 96,
+                fontWeight: 700,
+                lineHeight: 0.95,
+                letterSpacing: -3,
+                color: "#1A1A1F",
+                fontFamily: "Fraunces, Georgia, serif",
+              }}
+            >
+              One New Thing
+            </div>
+            <div
+              style={{
+                fontSize: 28,
+                fontWeight: 400,
+                lineHeight: 1.35,
+                color: "#6B6B70",
+                maxWidth: 680,
+                fontFamily: "Inter, sans-serif",
+              }}
+            >
+              Three curated challenges every morning — easy, medium, hard. Break
+              routine, build micro-habits, discover something new every day.
+            </div>
           </div>
 
-          {/* Title */}
-          <div
-            style={{
-              fontSize: "72px",
-              fontWeight: 500,
-              lineHeight: 1.0,
-              letterSpacing: "-2px",
-              color: "#1A1A1F",
-              fontFamily: fontData ? "Fraunces" : "Georgia, serif",
-            }}
-          >
-            One New Thing
-          </div>
-
-          {/* Subtitle */}
-          <div
-            style={{
-              fontSize: "28px",
-              fontStyle: "italic",
-              lineHeight: 1.4,
-              color: "#6B6B70",
-              maxWidth: "600px",
-              fontFamily: fontData ? "Fraunces" : "Georgia, serif",
-            }}
-          >
-            A quiet daily challenge for people whose weeks have started to rhyme
+          {/* Three bars */}
+          <div style={{ display: "flex", gap: 6, width: 280 }}>
+            <div
+              style={{
+                flex: 1,
+                height: 8,
+                borderRadius: 4,
+                backgroundColor: "#A8B89B",
+              }}
+            />
+            <div
+              style={{
+                flex: 1,
+                height: 8,
+                borderRadius: 4,
+                backgroundColor: "#D4A574",
+              }}
+            />
+            <div
+              style={{
+                flex: 1,
+                height: 8,
+                borderRadius: 4,
+                backgroundColor: "#C97D5D",
+              }}
+            />
           </div>
         </div>
 
-        {/* Tier bars at bottom */}
+        {/* Spacer */}
+        <div style={{ flex: 1 }} />
+
+        {/* Bottom label */}
         <div
           style={{
-            position: "absolute",
-            bottom: "80px",
-            left: "80px",
-            right: "80px",
             display: "flex",
-            gap: "8px",
+            fontSize: 14,
+            fontWeight: 500,
+            textTransform: "uppercase",
+            letterSpacing: 2,
+            color: "#A0A0A8",
+            fontFamily: "Inter, sans-serif",
           }}
         >
-          <div
-            style={{
-              height: "6px",
-              flex: 1,
-              background: "#A8B89B",
-              borderRadius: "3px",
-            }}
-          />
-          <div
-            style={{
-              height: "6px",
-              flex: 1,
-              background: "#D4A574",
-              borderRadius: "3px",
-            }}
-          />
-          <div
-            style={{
-              height: "6px",
-              flex: 1,
-              background: "#C97D5D",
-              borderRadius: "3px",
-            }}
-          />
+          onenewthing.app
         </div>
       </div>
     ),
     {
       ...size,
-      fonts: fontData
-        ? [
-            {
-              name: "Fraunces",
-              data: fontData,
-              style: "normal",
-              weight: 500,
-            },
-          ]
-        : undefined,
+      fonts: [
+        {
+          name: "Fraunces",
+          data: frauncesBold,
+          style: "normal",
+          weight: 700,
+        },
+        {
+          name: "Inter",
+          data: interRegular,
+          style: "normal",
+          weight: 400,
+        },
+        {
+          name: "Inter",
+          data: interMedium,
+          style: "normal",
+          weight: 500,
+        },
+      ],
     }
   );
 }

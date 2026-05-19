@@ -82,21 +82,12 @@ export const metadata: Metadata = {
     title: "One New Thing — Daily Challenge App for iOS",
     description:
       "A quiet daily challenge app that helps you break routine and discover something new every day. Three fresh challenges each morning.",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "One New Thing — A quiet daily challenge journal for iOS",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "One New Thing — Daily Challenge App for iOS",
     description:
       "A quiet daily challenge app that helps you break routine and discover something new every day.",
-    images: ["/twitter-image"],
     creator: "@onenewthing",
     site: "@onenewthing",
   },

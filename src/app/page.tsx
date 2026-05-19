@@ -22,21 +22,12 @@ export const metadata: Metadata = {
       "Three curated challenges every morning. Break routine, build micro-habits, and discover something new every day.",
     url: "https://onenewthing.app",
     type: "website",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "One New Thing daily challenge app for iOS",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Daily Challenge App for iOS — Break Your Routine",
     description:
       "Three curated challenges every morning. Break routine, build micro-habits, and discover something new every day.",
-    images: ["/twitter-image"],
   },
 };
 

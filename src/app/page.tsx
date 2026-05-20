@@ -10,14 +10,14 @@ import { PrivacyPolicy } from "@/components/PrivacyPolicy";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Daily Challenge App for iOS — Break Your Routine",
+  title: "Daily Challenge App for iOS, Break Your Routine",
   description:
-    "Download One New Thing, the daily challenge app for iPhone. Three curated challenges every morning — easy, medium, hard. Break routine, build micro-habits, and discover something new every day. No streaks, no guilt.",
+    "Download One New Thing, the daily challenge app for iPhone. Three curated challenges every morning, easy, medium, hard. Break routine, build micro-habits, and discover something new every day. No streaks, no guilt.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Daily Challenge App for iOS — Break Your Routine",
+    title: "Daily Challenge App for iOS, Break Your Routine",
     description:
       "Three curated challenges every morning. Break routine, build micro-habits, and discover something new every day.",
     url: "https://onenewthing.app",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Daily Challenge App for iOS — Break Your Routine",
+    title: "Daily Challenge App for iOS, Break Your Routine",
     description:
       "Three curated challenges every morning. Break routine, build micro-habits, and discover something new every day.",
   },
@@ -38,7 +38,7 @@ const softwareApplicationSchema = {
   operatingSystem: "iOS",
   applicationCategory: "LifestyleApplication",
   description:
-    "A quiet daily challenge app that delivers three curated challenges every morning — one easy, one medium, one hard. Designed to help you break routine and discover something new every day.",
+    "A quiet daily challenge app that delivers three curated challenges every morning, one easy, one medium, one hard. Designed to help you break routine and discover something new every day.",
   url: "https://onenewthing.app",
   screenshot: [
     {
@@ -128,7 +128,7 @@ const faqPageSchema = {
       name: "What is One New Thing?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "One New Thing is a daily challenge app for iPhone designed to help you break routine and discover something new every day. Each morning, the app delivers three curated challenges — one easy, one medium, one hard.",
+        text: "One New Thing is a daily challenge app for iPhone designed to help you break routine and discover something new every day. Each morning, the app delivers three curated challenges, one easy, one medium, one hard.",
       },
     },
     {
@@ -144,7 +144,7 @@ const faqPageSchema = {
       name: "What kinds of challenges will I get?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Challenges span ten categories: Around Town, Food & Drink, People, Move, Make, Learn, Culture, Home, Self-Care, and Offline. They're concrete, observable actions — not inner-work prompts or therapy exercises.",
+        text: "Challenges span ten categories: Around Town, Food & Drink, People, Move, Make, Learn, Culture, Home, Self-Care, and Offline. They're concrete, observable actions, not inner-work prompts or therapy exercises.",
       },
     },
     {
@@ -152,7 +152,7 @@ const faqPageSchema = {
       name: "Is the One New Thing app free?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "One New Thing is free to download and use. The core experience — three daily challenges, history, stats, and notes — is completely free. Pro subscribers unlock cloud sync across devices and additional features.",
+        text: "One New Thing is free to download and use. The core experience, three daily challenges, history, stats, and notes, is completely free. Pro subscribers unlock cloud sync across devices and additional features.",
       },
     },
     {

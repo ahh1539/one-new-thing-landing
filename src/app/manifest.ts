@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "One New Thing — Daily Challenge App",
+    name: "One New Thing, Daily Challenge App",
     short_name: "One New Thing",
     description:
       "A quiet daily challenge app that helps you break routine and discover something new every day.",

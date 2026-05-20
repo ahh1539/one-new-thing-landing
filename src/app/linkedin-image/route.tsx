@@ -126,7 +126,7 @@ export async function GET() {
               marginBottom: 36,
             }}
           >
-            A quiet daily challenge app. Three fresh challenges every morning — easy, medium, hard. Break routine, discover something new.
+            A quiet daily challenge app. Three fresh challenges every morning, easy, medium, hard. Break routine, discover something new.
           </div>
 
           {/* CTA row */}
@@ -202,7 +202,7 @@ export async function GET() {
           </div>
         </div>
 
-        {/* Right side — abstract phone/challenge cards visual */}
+        {/* Right side, abstract phone/challenge cards visual */}
         <div
           style={{
             width: 420,

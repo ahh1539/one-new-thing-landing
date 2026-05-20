@@ -10,11 +10,11 @@ export function Philosophy() {
   return (
     <section
       ref={ref}
-      className="px-6 py-24 sm:px-8 md:px-12 lg:px-16 lg:py-32"
+      className="px-6 py-20 sm:px-8 md:px-12 lg:px-16 lg:py-28"
       aria-labelledby="philosophy-heading"
     >
       <div className="mx-auto max-w-4xl">
-        <div className="mb-16">
+        <div className="mb-12">
           <span className="font-mono text-[11px] text-secondary">§ 04</span>
           <h2
             id="philosophy-heading"
@@ -145,7 +145,7 @@ export function Philosophy() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-border pt-6">
+        <div className="mt-12 border-t border-border pt-6">
           <p className="font-mono text-[10px] uppercase tracking-[1px] text-secondary">
             Sources
           </p>

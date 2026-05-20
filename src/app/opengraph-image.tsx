@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "One New Thing — Daily Challenge App for iOS";
+export const alt = "One New Thing, Daily Challenge App for iOS";
 export const size = {
   width: 1200,
   height: 630,
@@ -46,7 +46,7 @@ export default async function Image() {
             fontFamily: "Inter, sans-serif",
           }}
         >
-          No. 001 — Daily Challenges
+          No. 001, Daily Challenges
         </div>
 
         {/* Spacer */}
@@ -83,7 +83,7 @@ export default async function Image() {
                 fontFamily: "Inter, sans-serif",
               }}
             >
-              Three curated challenges every morning — easy, medium, hard. Break
+              Three curated challenges every morning, easy, medium, hard. Break
               routine, build micro-habits, discover something new every day.
             </div>
           </div>

@@ -32,9 +32,9 @@ export function Tiers() {
   const isInView = useInView(ref);
 
   return (
-    <section ref={ref} className="px-6 py-24 sm:px-8 md:px-12 lg:px-16 lg:py-32">
+    <section ref={ref} className="px-6 py-20 sm:px-8 md:px-12 lg:px-16 lg:py-28">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-16">
+        <div className="mb-12">
           <span className="font-mono text-[11px] text-secondary">§ 02</span>
           <h2
             className="mt-2 font-serif text-[40px] font-medium leading-[1.05] tracking-[-1.5px] text-ink sm:text-[44px]"

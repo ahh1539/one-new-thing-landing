@@ -32,11 +32,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://onenewthing.app"),
   title: {
-    default: "One New Thing — Daily Challenge App for iOS",
+    default: "One New Thing, Daily Challenge App for iOS",
     template: "%s | One New Thing",
   },
   description:
-    "A quiet daily challenge app that helps you break routine and discover something new every day. Three fresh challenges each morning — one easy, one medium, one hard. No streaks, no guilt, no noise. Built for iPhone.",
+    "A quiet daily challenge app that helps you break routine and discover something new every day. Three fresh challenges each morning, one easy, one medium, one hard. No streaks, no guilt, no noise. Built for iPhone.",
   keywords: [
     "daily challenge app",
     "micro habit app",
@@ -80,13 +80,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://onenewthing.app",
     siteName: "One New Thing",
-    title: "One New Thing — Daily Challenge App for iOS",
+    title: "One New Thing, Daily Challenge App for iOS",
     description:
       "A quiet daily challenge app that helps you break routine and discover something new every day. Three fresh challenges each morning.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "One New Thing — Daily Challenge App for iOS",
+    title: "One New Thing, Daily Challenge App for iOS",
     description:
       "A quiet daily challenge app that helps you break routine and discover something new every day.",
     creator: "@onenewthing",

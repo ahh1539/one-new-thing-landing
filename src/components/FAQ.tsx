@@ -6,7 +6,7 @@ import { useInView } from "./useInView";
 const faqs = [
   {
     q: "What is One New Thing?",
-    a: "One New Thing is a daily challenge app for iPhone designed to help you break routine and discover something new every day. Each morning, the app delivers three curated challenges — one easy, one medium, one hard. You only need to complete one. It functions as a gentle micro-habit journal rather than a rigid habit tracker.",
+    a: "One New Thing is a daily challenge app for iPhone designed to help you break routine and discover something new every day. Each morning, the app delivers three curated challenges, one easy, one medium, one hard. You only need to complete one. It functions as a gentle micro-habit journal rather than a rigid habit tracker.",
   },
   {
     q: "Is this another habit tracker?",
@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     q: "What kinds of challenges will I get?",
-    a: "Challenges span ten categories: Around Town, Food & Drink, People, Move, Make, Learn, Culture, Home, Self-Care, and Offline. They're concrete, observable actions — not inner-work prompts or therapy exercises. Think 'Walk a different way home,' not 'Practice gratitude.'",
+    a: "Challenges span ten categories: Around Town, Food & Drink, People, Move, Make, Learn, Culture, Home, Self-Care, and Offline. They're concrete, observable actions, not inner-work prompts or therapy exercises. Think 'Walk a different way home,' not 'Practice gratitude.'",
   },
   {
     q: "How does One New Thing help with routine fatigue?",
-    a: "Routine fatigue happens when weeks start to feel indistinguishable. By introducing one small, unexpected activity each day, One New Thing creates what psychologists call 'pattern interrupts' — deliberate breaks in repetition that restore attention, deepen memory formation, and increase subjective well-being. Over time, these micro-moments of novelty compound into a richer, more textured life.",
+    a: "Routine fatigue happens when weeks start to feel indistinguishable. By introducing one small, unexpected activity each day, One New Thing creates what psychologists call 'pattern interrupts', deliberate breaks in repetition that restore attention, deepen memory formation, and increase subjective well-being. Over time, these micro-moments of novelty compound into a richer, more textured life.",
   },
   {
     q: "Do I need an account?",
@@ -30,11 +30,11 @@ const faqs = [
   },
   {
     q: "Can I share my completions?",
-    a: "Yes. After completing a challenge, you can generate a share card — a clean, designed image with your challenge and note — and save it to your camera roll. Sharing is always opt-in and one-way.",
+    a: "Yes. After completing a challenge, you can generate a share card, a clean, designed image with your challenge and note, and save it to your camera roll. Sharing is always opt-in and one-way.",
   },
   {
     q: "Is the app free?",
-    a: "One New Thing is free to download and use. The core experience — three daily challenges, history, stats, and notes — is completely free. Pro subscribers unlock cloud sync across devices, additional challenge categories, and priority access to new features.",
+    a: "One New Thing is free to download and use. The core experience, three daily challenges, history, stats, and notes, is completely free. Pro subscribers unlock cloud sync across devices, additional challenge categories, and priority access to new features.",
   },
   {
     q: "Does One New Thing work offline?",
@@ -51,11 +51,11 @@ export function FAQ() {
     <section
       id="faq"
       ref={ref}
-      className="px-6 py-24 sm:px-8 md:px-12 lg:px-16 lg:py-32"
+      className="px-6 py-20 sm:px-8 md:px-12 lg:px-16 lg:py-28"
       aria-labelledby="faq-heading"
     >
       <div className="mx-auto max-w-4xl">
-        <div className="mb-16">
+        <div className="mb-12">
           <span className="font-mono text-[11px] text-secondary">§ 05</span>
           <h2
             id="faq-heading"

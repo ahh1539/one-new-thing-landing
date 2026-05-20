@@ -47,7 +47,7 @@ const screenshots: ScreenshotItem[] = [
     src: "/screenshots/06-completion-photo.png",
     title: "Keep the story",
     description:
-      "Add a note or snap a photo after marking complete. These are your anchors — small moments that help you remember.",
+      "Add a note or snap a photo after marking complete. These are your anchors, small moments that help you remember.",
     align: "right",
   },
 ];
@@ -102,12 +102,12 @@ export function Screenshots() {
   return (
     <section
       ref={ref}
-      className="px-6 py-28 sm:px-8 md:px-12 lg:px-16 lg:py-36"
+      className="px-6 py-24 sm:px-8 md:px-12 lg:px-16 lg:py-32"
       aria-labelledby="screenshots-heading"
     >
       <div className="mx-auto max-w-4xl">
         {/* Header */}
-        <div className="mb-24 text-center lg:mb-32">
+        <div className="mb-20 text-center lg:mb-28">
           <span className="font-mono text-[11px] text-secondary">§ 03a</span>
           <h2
             id="screenshots-heading"

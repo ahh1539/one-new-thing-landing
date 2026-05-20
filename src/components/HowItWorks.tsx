@@ -12,7 +12,7 @@ const steps = [
   {
     num: "02",
     title: "Pick one",
-    body: "You only need to complete one. Choose the challenge that fits your day — or the one you've been avoiding.",
+    body: "You only need to complete one. Choose the challenge that fits your day, or the one you've been avoiding.",
   },
   {
     num: "03",
@@ -29,10 +29,10 @@ export function HowItWorks() {
     <section
       id="how-it-works"
       ref={ref}
-      className="px-6 py-24 sm:px-8 md:px-12 lg:px-16 lg:py-32"
+      className="px-6 py-20 sm:px-8 md:px-12 lg:px-16 lg:py-28"
     >
       <div className="mx-auto max-w-4xl">
-        <div className="mb-16">
+        <div className="mb-12">
           <span className="font-mono text-[11px] text-secondary">§ 01</span>
           <h2
             className="mt-2 font-serif text-[40px] font-medium leading-[1.05] tracking-[-1.5px] text-ink sm:text-[44px]"

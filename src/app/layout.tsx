@@ -97,14 +97,6 @@ export const metadata: Metadata = {
     title: "One New Thing",
     statusBarStyle: "default",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
-      { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
-    ],
-    apple: "/apple-touch-icon.png",
-    shortcut: "/favicon.png",
-  },
   manifest: "/manifest.json",
   verification: {
     google: "YOUR_GOOGLE_VERIFICATION_CODE",

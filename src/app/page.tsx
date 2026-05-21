@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "Daily Challenge App for iOS, Break Your Routine",
     description:
       "Three curated challenges every morning. Break routine, build micro-habits, and discover something new every day.",
-    url: "https://onenewthing.app",
+    url: "https://www.one-new-thing.com",
     type: "website",
   },
   twitter: {
@@ -39,26 +39,26 @@ const softwareApplicationSchema = {
   applicationCategory: "LifestyleApplication",
   description:
     "A quiet daily challenge app that delivers three curated challenges every morning, one easy, one medium, one hard. Designed to help you break routine and discover something new every day.",
-  url: "https://onenewthing.app",
-  screenshot: [
+    url: "https://www.one-new-thing.com",
+    screenshot: [
     {
       "@type": "ImageObject",
-      url: "https://onenewthing.app/screenshots/01-today-light.png",
+      url: "https://www.one-new-thing.com/screenshots/01-today-light.png",
       caption: "Today's daily challenges screen showing easy, medium, and hard challenge cards",
     },
     {
       "@type": "ImageObject",
-      url: "https://onenewthing.app/screenshots/03-history.png",
+      url: "https://www.one-new-thing.com/screenshots/03-history.png",
       caption: "History view with contribution grid and completed challenges",
     },
     {
       "@type": "ImageObject",
-      url: "https://onenewthing.app/screenshots/04-stats.png",
+      url: "https://www.one-new-thing.com/screenshots/04-stats.png",
       caption: "Statistics dashboard showing streaks, completions, and category breakdown",
     },
     {
       "@type": "ImageObject",
-      url: "https://onenewthing.app/screenshots/06-completion-photo.png",
+      url: "https://www.one-new-thing.com/screenshots/06-completion-photo.png",
       caption: "Challenge completion with optional note and photo attachment",
     },
   ],
@@ -80,7 +80,7 @@ const softwareApplicationSchema = {
   author: {
     "@type": "Organization",
     name: "One New Thing",
-    url: "https://onenewthing.app",
+    url: "https://www.one-new-thing.com",
   },
 };
 
@@ -89,10 +89,10 @@ const organizationSchema = {
   "@type": "Organization",
   name: "One New Thing",
   alternateName: "ONT",
-  url: "https://onenewthing.app",
+  url: "https://www.one-new-thing.com",
   logo: {
     "@type": "ImageObject",
-    url: "https://onenewthing.app/apple-touch-icon.png",
+    url: "https://www.one-new-thing.com/apple-touch-icon.png",
     width: 180,
     height: 180,
   },
@@ -108,12 +108,12 @@ const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "One New Thing",
-  url: "https://onenewthing.app",
+  url: "https://www.one-new-thing.com",
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://onenewthing.app/?q={search_term_string}",
+      urlTemplate: "https://www.one-new-thing.com/?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },

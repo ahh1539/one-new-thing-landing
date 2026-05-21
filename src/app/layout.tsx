@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://onenewthing.app"),
+  metadataBase: new URL("https://www.one-new-thing.com"),
   title: {
     default: "One New Thing, Daily Challenge App for iOS",
     template: "%s | One New Thing",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     "iPhone lifestyle app",
     "curated daily challenges",
   ],
-  authors: [{ name: "Alex Hurley", url: "https://onenewthing.app" }],
+  authors: [{ name: "Alex Hurley", url: "https://www.one-new-thing.com" }],
   creator: "Alex Hurley",
   publisher: "Alex Hurley",
   applicationName: "One New Thing",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://onenewthing.app",
+    url: "https://www.one-new-thing.com",
     siteName: "One New Thing",
     title: "One New Thing, Daily Challenge App for iOS",
     description:
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     google: "YOUR_GOOGLE_VERIFICATION_CODE",
   },
   other: {
-    "apple-itunes-app": "app-id=6770367175, app-argument=https://onenewthing.app",
+    "apple-itunes-app": "app-id=6770367175, app-argument=https://www.one-new-thing.com",
   },
 };
 

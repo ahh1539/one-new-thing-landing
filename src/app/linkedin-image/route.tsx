@@ -162,7 +162,7 @@ export async function GET() {
                 fontFamily: "Inter, sans-serif",
               }}
             >
-              onenewthing.app
+              www.one-new-thing.com
             </div>
           </div>
 

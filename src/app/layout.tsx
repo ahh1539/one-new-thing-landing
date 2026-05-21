@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     google: "YOUR_GOOGLE_VERIFICATION_CODE",
   },
   other: {
-    "apple-itunes-app": "app-id=YOUR_APP_STORE_ID, app-argument=https://onenewthing.app",
+    "apple-itunes-app": "app-id=6770367175, app-argument=https://onenewthing.app",
   },
 };
 

@@ -41,7 +41,7 @@ export function Features() {
             className="mt-4 max-w-[540px] border-b border-border pb-7 font-serif text-lg italic leading-[1.5] text-secondary"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            Everything you need to break routine. Nothing you don't.
+            Everything you need to break routine. Nothing you don&apos;t.
           </p>
         </div>
 

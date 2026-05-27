@@ -336,7 +336,7 @@ export async function GET() {
                     fontFamily: "Inter, sans-serif",
                   }}
                 >
-                  Cook a dish you've never made before
+                  Cook a dish you&apos;ve never made before
                 </div>
               </div>
 

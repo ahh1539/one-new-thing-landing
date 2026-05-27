@@ -8,163 +8,151 @@ import { Philosophy } from "@/components/Philosophy";
 import { FAQ } from "@/components/FAQ";
 import { PrivacyPolicy } from "@/components/PrivacyPolicy";
 import { Footer } from "@/components/Footer";
+import { landingFaqs } from "@/content/faq";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Daily Challenge App for iOS, Break Your Routine",
-  description:
-    "Download One New Thing, the daily challenge app for iPhone. Three curated challenges every morning, easy, medium, hard. Break routine, build micro-habits, and discover something new every day. No streaks, no guilt.",
+  title: site.homeTitle,
+  description: site.description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Daily Challenge App for iOS, Break Your Routine",
-    description:
-      "Three curated challenges every morning. Break routine, build micro-habits, and discover something new every day.",
-    url: "https://www.one-new-thing.com",
+    title: site.homeTitle,
+    description: site.shortDescription,
+    url: site.url,
+    siteName: site.name,
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Daily Challenge App for iOS, Break Your Routine",
-    description:
-      "Three curated challenges every morning. Break routine, build micro-habits, and discover something new every day.",
+    title: site.homeTitle,
+    description: site.shortDescription,
+    creator: site.twitterHandle,
+    site: site.twitterHandle,
   },
 };
 
-const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "One New Thing",
-  operatingSystem: "iOS",
-  applicationCategory: "LifestyleApplication",
-  description:
-    "A quiet daily challenge app that delivers three curated challenges every morning, one easy, one medium, one hard. Designed to help you break routine and discover something new every day.",
-    url: "https://www.one-new-thing.com",
-    screenshot: [
-    {
-      "@type": "ImageObject",
-      url: "https://www.one-new-thing.com/screenshots/01-today-light.png",
-      caption: "Today's daily challenges screen showing easy, medium, and hard challenge cards",
-    },
-    {
-      "@type": "ImageObject",
-      url: "https://www.one-new-thing.com/screenshots/03-history.png",
-      caption: "History view with contribution grid and completed challenges",
-    },
-    {
-      "@type": "ImageObject",
-      url: "https://www.one-new-thing.com/screenshots/04-stats.png",
-      caption: "Statistics dashboard showing streaks, completions, and category breakdown",
-    },
-    {
-      "@type": "ImageObject",
-      url: "https://www.one-new-thing.com/screenshots/06-completion-photo.png",
-      caption: "Challenge completion with optional note and photo attachment",
-    },
-  ],
-  featureList: [
-    "Three curated daily challenges (easy, medium, hard)",
-    "Ten challenge categories: Around Town, Food & Drink, People, Move, Make, Learn, Culture, Home, Self-Care, Offline",
-    "Personal challenge history with contribution grid",
-    "Quiet statistics: streaks, completions, category breakdown",
-    "Optional notes and photos for completions",
-    "No streak pressure or guilt-based design",
-    "Offline-first with optional cloud sync",
-  ],
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-    description: "Free with optional Pro subscription",
-  },
-  author: {
-    "@type": "Organization",
-    name: "One New Thing",
-    url: "https://www.one-new-thing.com",
-  },
-};
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "One New Thing",
-  alternateName: "ONT",
-  url: "https://www.one-new-thing.com",
-  logo: {
+const screenshots = [
+  {
     "@type": "ImageObject",
-    url: "https://www.one-new-thing.com/apple-touch-icon.png",
-    width: 180,
-    height: 180,
+    url: `${site.url}/screenshots/01-today-light.png`,
+    caption:
+      "Today's daily challenges screen showing easy, medium, and hard challenge cards",
   },
-  sameAs: [
-    "https://twitter.com/onenewthing",
-  ],
-  description:
-    "We build thoughtful apps that help people break routine and discover something new every day.",
-  email: "hello@onenewthing.app",
-};
-
-const webSiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "One New Thing",
-  url: "https://www.one-new-thing.com",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://www.one-new-thing.com/?q={search_term_string}",
-    },
-    "query-input": "required name=search_term_string",
+  {
+    "@type": "ImageObject",
+    url: `${site.url}/screenshots/03-history.png`,
+    caption: "History view with contribution grid and completed challenges",
   },
-};
+  {
+    "@type": "ImageObject",
+    url: `${site.url}/screenshots/04-stats.png`,
+    caption:
+      "Statistics dashboard showing streaks, completions, and category breakdown",
+  },
+  {
+    "@type": "ImageObject",
+    url: `${site.url}/screenshots/06-completion-photo.png`,
+    caption: "Challenge completion with optional note and photo attachment",
+  },
+];
 
-const faqPageSchema = {
+const structuredData = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
+  "@graph": [
     {
-      "@type": "Question",
-      name: "What is One New Thing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "One New Thing is a daily challenge app for iPhone designed to help you break routine and discover something new every day. Each morning, the app delivers three curated challenges, one easy, one medium, one hard.",
+      "@type": "Organization",
+      "@id": `${site.url}/#organization`,
+      name: site.name,
+      alternateName: "ONT",
+      url: site.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${site.url}/apple-touch-icon.png`,
+        width: 180,
+        height: 180,
       },
+      sameAs: [site.twitterUrl],
+      description:
+        "We build thoughtful apps that help people break routine and discover something new every day.",
+      email: site.contactEmail,
     },
     {
-      "@type": "Question",
-      name: "Is One New Thing a habit tracker?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. One New Thing is not a habit tracker. There are no streaks to break, no chains to maintain, and no guilt when you miss a day. You get three fresh challenges every morning. Complete one, or none.",
-      },
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: `${site.url}/`,
+      name: site.name,
+      publisher: { "@id": `${site.url}/#organization` },
+      inLanguage: "en-US",
     },
     {
-      "@type": "Question",
-      name: "What kinds of challenges will I get?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Challenges span ten categories: Around Town, Food & Drink, People, Move, Make, Learn, Culture, Home, Self-Care, and Offline. They're concrete, observable actions, not inner-work prompts or therapy exercises.",
-      },
+      "@type": "WebPage",
+      "@id": `${site.url}/#webpage`,
+      url: `${site.url}/`,
+      name: site.homeTitle,
+      description: site.description,
+      isPartOf: { "@id": `${site.url}/#website` },
+      about: { "@id": `${site.url}/#app` },
+      breadcrumb: { "@id": `${site.url}/#breadcrumb` },
+      inLanguage: "en-US",
     },
     {
-      "@type": "Question",
-      name: "Is the One New Thing app free?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "One New Thing is free to download and use. The core experience, three daily challenges, history, stats, and notes, is completely free. Pro subscribers unlock cloud sync across devices and additional features.",
-      },
+      "@type": "BreadcrumbList",
+      "@id": `${site.url}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${site.url}/`,
+        },
+      ],
     },
     {
-      "@type": "Question",
-      name: "Does One New Thing work offline?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. All core features work offline. Your challenges, completions, notes, and photos are stored locally on your device. Cloud sync only happens when you choose to enable it.",
+      "@type": "SoftwareApplication",
+      "@id": `${site.url}/#app`,
+      name: site.name,
+      operatingSystem: "iOS",
+      applicationCategory: "LifestyleApplication",
+      description:
+        "A quiet daily challenge app that delivers three curated challenges every morning, one easy, one medium, one hard. Designed to help you break routine and discover something new every day.",
+      url: site.url,
+      screenshot: screenshots,
+      featureList: [
+        "Three curated daily challenges (easy, medium, hard)",
+        "Ten challenge categories: Around Town, Food & Drink, People, Move, Make, Learn, Culture, Home, Self-Care, Offline",
+        "Personal challenge history with contribution grid",
+        "Quiet statistics: streaks, completions, category breakdown",
+        "Optional notes and photos for completions",
+        "No streak pressure or guilt-based design",
+        "Offline-first with optional cloud sync",
+      ],
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        description: "Free with optional Pro subscription",
       },
+      author: { "@id": `${site.url}/#organization` },
+      publisher: { "@id": `${site.url}/#organization` },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${site.url}/#faq`,
+      mainEntity: landingFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.a,
+        },
+      })),
     },
   ],
-};
+}).replace(/</g, "\\u003c");
 
 export default function Home() {
   return (
@@ -173,12 +161,7 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            softwareApplicationSchema,
-            organizationSchema,
-            webSiteSchema,
-            faqPageSchema,
-          ]),
+          __html: structuredData,
         }}
       />
 

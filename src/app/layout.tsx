@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { site } from "@/content/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -20,6 +21,8 @@ const jetbrainsMono = JetBrains_Mono({
   preload: true,
 });
 
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -30,13 +33,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.one-new-thing.com"),
+  metadataBase: new URL(site.url),
   title: {
-    default: "One New Thing, Daily Challenge App for iOS",
+    default: site.defaultTitle,
     template: "%s | One New Thing",
   },
-  description:
-    "A quiet daily challenge app that helps you break routine and discover something new every day. Three fresh challenges each morning, one easy, one medium, one hard. No streaks, no guilt, no noise. Built for iPhone.",
+  description: site.description,
   keywords: [
     "daily challenge app",
     "micro habit app",
@@ -54,55 +56,41 @@ export const metadata: Metadata = {
     "iPhone lifestyle app",
     "curated daily challenges",
   ],
-  authors: [{ name: "Alex Hurley", url: "https://www.one-new-thing.com" }],
+  authors: [{ name: "Alex Hurley", url: site.url }],
   creator: "Alex Hurley",
   publisher: "Alex Hurley",
   applicationName: "One New Thing",
   category: "LifestyleApplication",
   classification: "Lifestyle",
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.one-new-thing.com",
-    siteName: "One New Thing",
-    title: "One New Thing, Daily Challenge App for iOS",
-    description:
-      "A quiet daily challenge app that helps you break routine and discover something new every day. Three fresh challenges each morning.",
+    url: site.url,
+    siteName: site.name,
+    title: site.defaultTitle,
+    description: site.shortDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: "One New Thing, Daily Challenge App for iOS",
-    description:
-      "A quiet daily challenge app that helps you break routine and discover something new every day.",
-    creator: "@onenewthing",
-    site: "@onenewthing",
+    title: site.defaultTitle,
+    description: site.shortDescription,
+    creator: site.twitterHandle,
+    site: site.twitterHandle,
   },
   appleWebApp: {
     capable: true,
     title: "One New Thing",
     statusBarStyle: "default",
   },
-  manifest: "/manifest.json",
-  verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
-  },
+  manifest: "/manifest.webmanifest",
+  ...(googleSiteVerification
+    ? { verification: { google: googleSiteVerification } }
+    : {}),
   other: {
-    "apple-itunes-app": "app-id=6770367175, app-argument=https://www.one-new-thing.com",
+    "apple-itunes-app": `app-id=6770367175, app-argument=${site.url}`,
   },
 };
 

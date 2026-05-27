@@ -1,22 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
 export function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
     <section className="relative px-6 pt-20 pb-16 sm:px-8 md:px-12 lg:px-16 lg:pt-28 lg:pb-24">
       <div className="mx-auto max-w-4xl">
-        <div
-          className={`transition-all duration-700 ease-out ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-          }`}
-        >
+        <div className="translate-y-0 opacity-100 transition-all duration-700 ease-out">
           <div className="mb-8">
             <span className="font-mono text-[11px] font-medium uppercase tracking-[3px] text-secondary">
               No. 001, Daily Challenges

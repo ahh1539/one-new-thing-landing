@@ -165,14 +165,6 @@ export default function Home() {
         }}
       />
 
-      {/* Skip Link */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-xl focus:bg-ink focus:px-6 focus:py-3 focus:text-paper focus:outline-none"
-      >
-        Skip to main content
-      </a>
-
       <main id="main-content" className="flex flex-col">
         <Hero />
         <div className="mx-auto w-full max-w-4xl px-6 sm:px-8 md:px-12 lg:px-16">

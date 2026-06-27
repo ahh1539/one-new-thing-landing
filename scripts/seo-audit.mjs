@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
+import matter from "gray-matter";
 
 const root = process.cwd();
 const checks = [];
@@ -220,11 +221,58 @@ check(
 );
 
 const mdxFiles = findFiles(join(root, "src"), ".mdx");
-check(
-  mdxFiles.length === 0,
-  "No MDX/blog content is present, so §7 content-engine checks are not applicable yet.",
-  "MDX content exists; add strict slug, seoTitle, description, FAQ, and citation validation.",
-);
+
+if (mdxFiles.length === 0) {
+  pass("No MDX/blog content is present, so §7 content-engine checks are not applicable yet.");
+} else {
+  for (const file of mdxFiles) {
+    const source = readFileSync(file, "utf8");
+    const { data: frontmatter } = matter(source);
+    const faq = Array.isArray(frontmatter.faq) ? frontmatter.faq : [];
+    const slug = file.replace(join(root, "src", "app", "blog"), "").replace(/\/page\.mdx$/, "").replace(/^\//, "");
+
+    if (!frontmatter || Object.keys(frontmatter).length === 0) {
+      fail(`Missing frontmatter in ${file}.`);
+      continue;
+    }
+
+    check(
+      frontmatter.seoTitle && frontmatter.seoTitle.length > 0 && frontmatter.seoTitle.length <= 60,
+      `MDX seoTitle is ≤60 characters in ${slug}.`,
+      `MDX seoTitle is missing or >60 characters in ${slug}: "${frontmatter.seoTitle}"`,
+    );
+
+    check(
+      frontmatter.description && frontmatter.description.length >= 140 && frontmatter.description.length <= 160,
+      `MDX description is 140-160 characters in ${slug}.`,
+      `MDX description is missing or out of range in ${slug}: ${frontmatter.description?.length ?? 0} characters.`,
+    );
+
+    const body = source.replace(/^---[\s\S]*?---/, "").toLowerCase();
+
+    if (faq.length > 0) {
+      for (const { q, a } of faq) {
+        check(
+          body.includes(q.toLowerCase().replace(/\?$/, "")) && body.includes(a.toLowerCase().slice(0, 60)),
+          `MDX FAQ mirrored visibly in ${slug}: "${q}"`,
+          `MDX FAQ not mirrored visibly in ${slug}: "${q}"`,
+        );
+      }
+    }
+
+    const markdownLinks = [...source.matchAll(/\]\(https:\/\/([^)]+)\)/g)].map((m) => m[1]);
+    const htmlLinks = [...source.matchAll(/href="https:\/\/([^"]+)"/g)].map((m) => m[1]);
+    const externalCitations = [...markdownLinks, ...htmlLinks].filter(
+      (url) => !url.startsWith("www.one-new-thing.com") && !url.startsWith("one-new-thing.com"),
+    );
+
+    check(
+      externalCitations.length > 0,
+      `MDX has ≥1 external citation in ${slug}.`,
+      `MDX is missing an external citation in ${slug}.`,
+    );
+  }
+}
 
 const failures = checks.filter((check) => !check.ok);
 for (const check of checks) {

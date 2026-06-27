@@ -2,6 +2,17 @@ import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const posts = [
+    {
+      slug: "one-new-thing-vs-habit-trackers",
+      lastModified: "2026-06-27",
+    },
+    {
+      slug: "why-small-novelty-matters",
+      lastModified: "2026-06-27",
+    },
+  ];
+
   return [
     {
       url: site.url,
@@ -16,5 +27,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
         `${site.url}/screenshots/06-completion-photo.png`,
       ],
     },
+    {
+      url: `${site.url}/blog`,
+      lastModified: new Date("2026-06-27"),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    ...posts.map((post) => ({
+      url: `${site.url}/blog/${post.slug}`,
+      lastModified: new Date(post.lastModified),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
   ];
 }

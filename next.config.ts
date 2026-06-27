@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 import { site } from "./src/content/site";
 
 const nextConfig: NextConfig = {
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200],
@@ -45,4 +47,17 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [
+      ["remark-frontmatter"],
+      ["remark-mdx-frontmatter", { name: "frontmatter" }],
+    ],
+    rehypePlugins: [
+      ["rehype-slug"],
+      ["rehype-autolink-headings", { behavior: "wrap" }],
+    ],
+  },
+});
+
+export default withMDX(nextConfig);

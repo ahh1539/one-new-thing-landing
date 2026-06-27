@@ -47,6 +47,14 @@ export function Footer() {
               </li>
               <li>
                 <a
+                  href="/blog"
+                  className="text-secondary transition-colors hover:text-ink"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
                   href="mailto:hello@onenewthing.app"
                   className="text-secondary transition-colors hover:text-ink"
                 >
